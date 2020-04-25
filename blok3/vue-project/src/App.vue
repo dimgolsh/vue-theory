@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-counter></app-counter>
-    <h1>{{ carName }}</h1>
+    <h1 v-colored>{{ carName }}</h1>
     <app-car
     :carName="carName"
     :carYear="carYear"
