@@ -42,6 +42,12 @@
           return this.counter > 3 ? 'moret 3' : 'less 3'
         }
       },
+      watch: {
+        counter: function(val){
+          console.log(this.counter)
+          console.log(val)
+        }
+      },
       });
     </script>
   </body>
