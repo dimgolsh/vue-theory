@@ -6,6 +6,7 @@ import FormS from './pages/FormS.vue'
 import CarFull from './pages/CarFull.vue'
 import Error from './pages/Error.vue'
 import CarPost from './pages/CarPost.vue'
+import CounterPage from './pages/CounterPage.vue'
 
 const Cars = resolve => {
   require.ensure(['./pages/Cars.vue'],()=>{
@@ -24,6 +25,10 @@ export default new VueRouter({
     {
       path:'/cars',
       component: Cars
+    },
+    {
+      path:'/count',
+      component: CounterPage
     },
     {
       path:'/carsf',
