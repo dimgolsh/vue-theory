@@ -14,6 +14,36 @@
         <div class="invalid-feedback" v-if="!$v.email.required">dddddd</div>
         <div class="invalid-feedback" v-if="!$v.email.email">dddddd</div>
       </div>
+      <div class="form-group">
+        <label for="password">password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          v-model="password"
+          :class="{'is-invalid' : $v.password.$error}"
+          @input="$v.password.$touch()"
+        />
+        <div
+          class="invalid-feedback"
+          v-if="!$v.password.minLength"
+        >password is {{$v.password.$params.minLength.min}} now {{password.length}}</div>
+      </div>
+      <div class="form-group">
+        <label for="confirm">confirm password</label>
+        <input
+          type="password"
+          id="confirm"
+          class="form-control"
+          v-model="confirm"
+          :class="{'is-invalid' : $v.confirm.$error}"
+          @input="$v.confirm.$touch()"
+        />
+        <div
+          class="invalid-feedback"
+          v-if="!$v.confirm.sameAs"
+        >password is now {{password.length}}</div>
+      </div>
     </form>
     <pre>
     {{$v.email}}
@@ -22,18 +52,26 @@
 </template>
 
 <script>
-import { required, email } from "vuelidate/lib/validators";
+import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
 
 export default {
   data() {
     return {
-      email: ""
+      email: "",
+      password: "",
+      confirm: ''
     };
   },
   validations: {
     email: {
       required: required,
       email
+    },
+    password: {
+      minLength: minLength(6)
+    },
+    confirm:{
+      sameAs: sameAs('password')
     }
   }
 };
