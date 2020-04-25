@@ -15,6 +15,8 @@
         X {{x}} \ y {{y}}
         <span v-on:mousemove.stop=''>stop me</span>
       </h2>
+
+      <input type="text" v-on:keyup.enter="alertk">
     </div>
     <script>
       new Vue({
@@ -31,6 +33,11 @@
           handle: function(event){
             this.x = event.clientX
             this.y = event.clientY
+          },
+          alertk: function(event){
+            if(event.keyCode === 13){
+              alert(event.target.value)
+            }
           }
         },
       });
