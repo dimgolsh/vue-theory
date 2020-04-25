@@ -13,6 +13,7 @@
         />
         <div class="invalid-feedback" v-if="!$v.email.required">dddddd</div>
         <div class="invalid-feedback" v-if="!$v.email.email">dddddd</div>
+        <div class="invalid-feedback" v-if="!$v.email.uniqEmail">uniqEmail</div>
       </div>
       <div class="form-group">
         <label for="password">password</label>
@@ -65,7 +66,16 @@ export default {
   validations: {
     email: {
       required: required,
-      email
+      email,
+      uniqEmail: function(newEmail){
+        if (newEmail ==='') return true
+        return new Promise((resolve,reject)=>{
+          setInterval(()=>{
+            const value = newEmail !== 'test@mail.ru';
+            resolve(value)
+          },3000)
+        })
+      }
     },
     password: {
       minLength: minLength(6)
