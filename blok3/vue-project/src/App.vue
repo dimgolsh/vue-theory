@@ -64,6 +64,10 @@
     <hr>
     <input type="text" v-model.number="age">
     <p>{{age}}</p>
+    <hr>
+    <app-onoff v-model="switched" ></app-onoff>
+    <h3 v-if="switched">Enable</h3>
+    <h3 v-else-if="!switched">Disabel</h3>
   </div>
 </template>
 
@@ -83,7 +87,8 @@ export default {
       socialrad: "",
       socialSelect: ["instagram", "facebook", "vk"],
       defaultSelect: "facebook",
-      socialSelectOne: 'facebook'
+      socialSelectOne: 'facebook',
+      switched: false
     };
   },
   components: {

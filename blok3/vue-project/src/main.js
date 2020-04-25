@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import List from "./List.vue";
+import Onoff from "./Onoff.vue";
 import ColorDirect from "./color";
 
 Vue.directive("colored", ColorDirect);
@@ -16,6 +17,8 @@ Vue.filter("add", value => {
 });
 
 Vue.component("app-list", List);
+Vue.component("app-onoff", Onoff);
+
 
 Vue.mixin({
   beforeCreate() {}
