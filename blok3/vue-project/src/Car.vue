@@ -2,6 +2,7 @@
   <div class="car">
     <h3>Name {{carName}}</h3>
     <h3>Year {{carYear}}</h3>
+    <button @click="changeName">+++</button>
   </div>
 </template>
 
@@ -23,6 +24,12 @@ export default {
   },
   data() {
     return {};
+  },
+  methods:{
+    changeName(){
+      this.carName = 'Mazda',
+      this.$emit('nameChanged',this.carName)
+    }
   }
 };
 </script>
