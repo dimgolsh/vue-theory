@@ -26,23 +26,35 @@
     </ul>
     <hr />
     <app-list></app-list>
-    <hr>
+    <hr />
     <textarea v-model="carName"></textarea>
-    <hr>
-    <label >
-      <input type="checkbox" value="instagram" v-model="social">instagram
+    <hr />
+    <label>
+      <input type="checkbox" value="instagram" v-model="social" />instagram
     </label>
-     <label >
-      <input type="checkbox" value="facebook" v-model="social">facebook
+    <label>
+      <input type="checkbox" value="facebook" v-model="social" />facebook
     </label>
-    <label >
-      <input type="checkbox" value="vk" v-model="social">vk
+    <label>
+      <input type="checkbox" value="vk" v-model="social" />vk
     </label>
 
-    <hr>
+    <hr />
     <ul>
       <li v-for="s in social">{{s}}</li>
     </ul>
+    <hr />
+    <hr />
+    <label>
+      <input type="radio" value="instagram" v-model="socialrad" />instagram
+    </label>
+    <label>
+      <input type="radio" value="facebook" v-model="socialrad" />facebook
+    </label>
+    <label>
+      <input type="radio" value="vk" v-model="socialrad" />vk
+    </label>
+    <p>{{socialrad}}</p>
   </div>
 </template>
 
@@ -57,7 +69,8 @@ export default {
       carYear: 2018,
       names: ["Vlas", "Max", "Elena", "Igor"],
       searchName: "",
-      social: []
+      social: [],
+      socialrad: ''
     };
   },
   components: {
