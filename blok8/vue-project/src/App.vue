@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <router-view></router-view>
     <form @submit.prevent="onSumbit">
       <div class="form-group">
         <label for="email">Emau</label>
