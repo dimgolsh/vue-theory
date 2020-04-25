@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+  </head>
+  <body>
+    <div id="app">
+   
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        data: {
+         title: 'title'
+      },
+      template: '<h1>{{title}}</h1>'
+      });
+
+      app.$mount('#app');
+
+    
+
+    </script>
+  </body>
+</html>
