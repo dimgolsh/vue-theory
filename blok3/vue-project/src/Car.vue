@@ -3,6 +3,7 @@
     <h3>Name {{carName}}</h3>
     <h3>Year {{carYear}}</h3>
     <button @click="changeName">+++</button>
+    <button @click="changeFunc()">+parent++</button>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ export default {
   // props: ["carName", "carYear"],
   props: {
     carName: { type: String, default:'rrrrrrr' },
-    carYear: Number
+    carYear: Number,
+    changeFunc: Function
   },
 
   computed: {
