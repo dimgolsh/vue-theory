@@ -28,6 +28,21 @@
     <app-list></app-list>
     <hr>
     <textarea v-model="carName"></textarea>
+    <hr>
+    <label >
+      <input type="checkbox" value="instagram" v-model="social">instagram
+    </label>
+     <label >
+      <input type="checkbox" value="facebook" v-model="social">facebook
+    </label>
+    <label >
+      <input type="checkbox" value="vk" v-model="social">vk
+    </label>
+
+    <hr>
+    <ul>
+      <li v-for="s in social">{{s}}</li>
+    </ul>
   </div>
 </template>
 
@@ -41,7 +56,8 @@ export default {
       carName: "Ford from parent",
       carYear: 2018,
       names: ["Vlas", "Max", "Elena", "Igor"],
-      searchName: ""
+      searchName: "",
+      social: []
     };
   },
   components: {
