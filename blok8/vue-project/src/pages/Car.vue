@@ -8,7 +8,7 @@
     <router-link
     class="btn btn-sm btn-default"
     tag="button"
-    :to="{name: 'carfull',params: {id: id}, query: {name: 'mazda', year: '2222'}}"
+    :to="{name: 'carfull',params: {id: id}, query: {name: 'mazda', year: '2222'}, scroll: '#scroll'}"
 
     >info
     </router-link>
