@@ -4,10 +4,13 @@
     <h3>Year {{carYear}}</h3>
     <button @click="changeName">+++</button>
     <button @click="changeFunc()">+parent++</button>
+    <button @click="updateCounter">Upd</button>
   </div>
 </template>
 
 <script>
+import {eventEmitter} from './main.js'
+
 export default {
   // props: ["carName", "carYear"],
   props: {
@@ -31,6 +34,10 @@ export default {
     changeName(){
       this.carName = 'Mazda',
       this.$emit('nameChanged',this.carName)
+    },
+    updateCounter(){
+     // this.$emit('counterUpdated',this.counter++)
+      eventEmitter.$emit('counterUpdated', 3)
     }
   }
 };
