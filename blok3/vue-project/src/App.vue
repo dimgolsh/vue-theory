@@ -40,6 +40,9 @@ export default {
     changeNameToAudi(){
       this.carName = 'Auid'
     }
+  },
+  directive:{
+    
   }
 };
 </script>
