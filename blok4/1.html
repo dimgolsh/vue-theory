@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+  </head>
+  <body>
+    <div id="app">
+        <my-counter></my-counter>
+        <my-counter></my-counter>
+        <my-counter></my-counter>
+        <my-counter></my-counter>
+     
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      Vue.component("my-counter", {
+        template: `
+         <div style="border: 1px solid black; padding: 10px;">
+             <h2>counter {{counter}}</h2>
+            <button @click="add">Add</button>
+      </div>`,
+        data: function()  {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+          add() {
+            this.counter++;
+          },
+        },
+      });
+      let app = new Vue({
+        el:"#app"
+      });
+    </script>
+  </body>
+</html>
