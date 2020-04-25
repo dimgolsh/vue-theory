@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+      <a href="#" target="_blank" @click='stop'>++++++</a>
+      <a href="#" target="_blank" @click.prevent=''>++++++</a>
+      <h2 @mousemove='handle' >
+        X {{x}} \ y {{y}}
+        <span @mousemove.stop=''>stop me</span>
+      </h2>
+
+      <input type="text" @keyup.enter="alertk">
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          x:0,
+          y:0
+        },
+        methods: {
+          stop: function(event){
+            event.preventDefault();
+            console.log('hren teveb')
+          },
+          handle: function(event){
+            this.x = event.clientX
+            this.y = event.clientY
+          },
+          alertk: function(event){
+            if(event.keyCode === 13){
+              alert(event.target.value)
+            }
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
