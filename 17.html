@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{title}}</h2>
+      <button @click="upd">upd1</button>
+    </div>
+ 
+    <div id="app2">
+      <h2>{{title}}</h2>
+      <button @click="upd">upd2</button>
+    </div>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+         title: 'title'
+      },
+      methods:{
+        upd: function(){
+          this.title = 'upd title'
+        },
+        alerts: function(){
+          alert('hi from 1')
+        }
+      }
+      });
+
+      new Vue({
+        el: "#app2",
+        data: {
+         title: 'title'
+      },
+      methods:{
+        upd: function(){
+          app.title = 'upd title from 2';
+          app.alerts();
+        }
+      }
+      });
+
+    </script>
+  </body>
+</html>
