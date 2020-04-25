@@ -46,6 +46,8 @@ export default {
         .then(newCar => {
           console.log(newCar);
         });
+
+        this.resource.save({},car)
     },
     getCars() {
       this.$http
@@ -58,7 +60,12 @@ export default {
           console.log(newCar);
           this.cars = newCar
         });
+        this.resource.get().then(res=>res.json()).then(cars=>this.cars=cars)
+
     }
+  },
+  created(){
+    this.resource = this.$resource('http://localhost:3000/cars')
   }
 };
 </script>
