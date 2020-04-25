@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form action>
+    <form @submit.prevent="onSumbit">
       <div class="form-group">
         <label for="email">Emau</label>
         <input
@@ -45,6 +45,9 @@
           v-if="!$v.confirm.sameAs"
         >password is now {{password.length}}</div>
       </div>
+      <button class="btn btn-primary" type="submit"
+      :disabled="$v.$invalid"
+      >Submut</button>
     </form>
     <pre>
     {{$v.email}}
@@ -62,6 +65,13 @@ export default {
       password: "",
       confirm: ''
     };
+  },
+  methods: {
+    onSumbit(){
+
+      console.log(this.email);
+      console.log(this.password);
+    }
   },
   validations: {
     email: {
