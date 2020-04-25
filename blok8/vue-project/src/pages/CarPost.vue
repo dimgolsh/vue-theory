@@ -51,7 +51,7 @@ export default {
     },
     getCars() {
       this.$http
-        .get("http://localhost:3000/cars")
+        .get("cars")
         .then(response => {
           console.log(response);
           return response.json();
@@ -65,7 +65,7 @@ export default {
     }
   },
   created(){
-    this.resource = this.$resource('http://localhost:3000/cars')
+    this.resource = this.$resource('cars')
   }
 };
 </script>
