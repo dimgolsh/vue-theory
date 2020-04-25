@@ -4,6 +4,8 @@
     <hr>
     <h1 v-colored:background.font="'red'">{{ carName }}</h1>
     <h1 v-colored:color="'green'">{{ carName }}</h1>
+    <h1 v-colored:color="'green'">{{ carName | lowerCase }}</h1>
+    <h1 v-colored:color="'green'">{{ carName | uppercase | add }}</h1>
 
     <hr>
 
@@ -42,7 +44,12 @@ export default {
     }
   },
   directive:{
-    
+
+  },
+  filters: {
+    lowerCase(value){
+      return value.toLowerCase()
+    }
   }
 };
 </script>
