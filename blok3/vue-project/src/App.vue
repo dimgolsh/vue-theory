@@ -8,7 +8,11 @@
     :changeFunc = 'changeNameToAudi'
     @nameChanged="carName = $event"
     @counterUpdated = "counter = $event"
-    ></app-car>
+    >
+    <h1 slot="title">{{ carName }}</h1>
+    <h2 slot="body">gelllgdgddgd</h2>
+
+    </app-car>
   </div>
 </template>
 

@@ -1,9 +1,11 @@
 <template>
   <div class="car">
+       <slot name="title"></slot>
     <h3>Name {{carName}}</h3>
     <h3>Year {{carYear}}</h3>
     <button @click="changeName">+++</button>
     <button @click="changeFunc()">+parent++</button>
+   <slot name="body"></slot>
     <button @click="updateCounter">Upd</button>
   </div>
 </template>
