@@ -1,8 +1,11 @@
 export default {
   bind(el, bindings, vnode){
     console.log('bind');
-    el.style.color = 'red'
-    el.style.color = bindings.value
+   // el.style.color = 'red'
+    const arg = bindings.arg
+    el.style[arg] = bindings.value
+
+
 
   },
   inserted(el, bindings, vnode){
