@@ -1,30 +1,27 @@
-import Vue from 'vue'
-import App from './App.vue'
-import List from './List.vue'
-import ColorDirect from './color';
+import Vue from "vue";
+import App from "./App.vue";
+import List from "./List.vue";
+import ColorDirect from "./color";
 
+Vue.directive("colored", ColorDirect);
 
-Vue.directive('colored', ColorDirect)
+export const eventEmitter = new Vue();
 
+Vue.filter("uppercase", value => {
+  return value.toUpperCase();
+});
 
-export const eventEmitter = new Vue()
+Vue.filter("add", value => {
+  return value + " Yess";
+});
 
-Vue.filter('uppercase', (value)=>{
-  return value.toUpperCase()
-})
+Vue.component("app-list", List);
 
-Vue.filter('add', (value)=>{
-  return value + ' Yess'
-})
-
-
-Vue.component('app-list',List)
-
+Vue.mixin({
+  beforeCreate() {}
+});
 
 new Vue({
-  el: '#app',
+  el: "#app",
   render: h => h(App)
-})
-
-
-
+});
