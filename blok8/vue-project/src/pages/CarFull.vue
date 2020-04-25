@@ -20,6 +20,9 @@ export default {
         return this.$route.query.name
       },
 
+  },
+  beforeRouteEnter(to,from,next){
+    next(true)
   }
 
 }

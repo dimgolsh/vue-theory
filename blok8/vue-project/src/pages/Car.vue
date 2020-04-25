@@ -24,6 +24,13 @@ export default {
       idr: this.$route.params["id"]
     };
   },
+  beforeRouteLeave(to,from,next){
+    console.log('dddddddddd')
+    if(window.confirm('ddddddddddd')){
+      
+    }
+
+  },
   methods: {
     goBack() {
       this.$router.push("/cars");
