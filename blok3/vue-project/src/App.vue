@@ -55,6 +55,15 @@
       <input type="radio" value="vk" v-model="socialrad" />vk
     </label>
     <p>{{socialrad}}</p>
+    <hr />
+    <hr />
+    <select v-model="socialSelectOne">
+      <option v-for="s in socialSelect" :selected="s === defaultSelect">{{s}}</option>
+    </select>
+    <p>{{socialSelectOne}}</p>
+    <hr>
+    <input type="text" v-model.number="age">
+    <p>{{age}}</p>
   </div>
 </template>
 
@@ -70,7 +79,11 @@ export default {
       names: ["Vlas", "Max", "Elena", "Igor"],
       searchName: "",
       social: [],
-      socialrad: ''
+      age: 20,
+      socialrad: "",
+      socialSelect: ["instagram", "facebook", "vk"],
+      defaultSelect: "facebook",
+      socialSelectOne: 'facebook'
     };
   },
   components: {
