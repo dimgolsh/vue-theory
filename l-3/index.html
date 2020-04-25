@@ -9,17 +9,24 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div id="app">
-      <h2>
-        <a v-html='link'></a>
-      </h2>
+      <h2 v-on:click='counters'>Counter {{counter}}</h2>
+      <h2 v-on:click='counter2++'>Counter {{counter2}}</h2>
+      <button>+</button>
+
 
       </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          link: '<a href="fdfdfdf">googg</a>'
+          counter: 0,
+          counter2: 0
         },
+        methods: {
+          counters: function(){
+            this.counter += 1
+          }
+        }
     
       });
     </script>
