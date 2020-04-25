@@ -1,7 +1,10 @@
 <template>
   <div>
     <app-counter></app-counter>
+    <hr>
     <h1 v-colored>{{ carName }}</h1>
+    <hr>
+
     <app-car
     :carName="carName"
     :carYear="carYear"
@@ -10,7 +13,7 @@
     @counterUpdated = "counter = $event"
     >
     <h1 slot="title">{{ carName }}</h1>
-    <h2 slot="body">gelllgdgddgd</h2>
+    <h2 slot="body">Body</h2>
 
     </app-car>
   </div>
