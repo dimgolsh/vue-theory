@@ -16,6 +16,9 @@
           <router-link tag="li" class="nav-item" to="/form">
             <a class="nav-link">Form</a>
           </router-link>
+            <router-link tag="li" class="nav-item" to="/carsf">
+            <a class="nav-link">carf</a>
+          </router-link>
         </ul>
       </div>
     </nav>

@@ -5,6 +5,7 @@ import Car from './pages/Car.vue'
 import FormS from './pages/FormS.vue'
 import CarFull from './pages/CarFull.vue'
 import Error from './pages/Error.vue'
+import CarPost from './pages/CarPost.vue'
 
 const Cars = resolve => {
   require.ensure(['./pages/Cars.vue'],()=>{
@@ -23,6 +24,10 @@ export default new VueRouter({
     {
       path:'/cars',
       component: Cars
+    },
+    {
+      path:'/carsf',
+      component: CarPost
     },
     {
       path:'/car/:id',
