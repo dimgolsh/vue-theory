@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue JS</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2 ref='heading'>{{title}}</h2>
+      <button @click="upd">upd1</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+         title: 'title'
+      },
+      methods:{
+        upd: function(){
+          this.title = 'upd title';
+          console.log(this.$refs);
+          this.$refs.heading.style.fontSize = '60px'
+          this.$refs.heading.style.color = 'red'
+        },
+      }
+      });
+
+    
+
+    </script>
+  </body>
+</html>
