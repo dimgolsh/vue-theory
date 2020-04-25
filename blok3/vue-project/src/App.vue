@@ -20,6 +20,11 @@
     <h2 slot="body">Body</h2>
 
     </app-car>
+    <hr>
+    <input type="text" v-model="searchName">
+    <ul>
+      <li v-for="(name,index) of filterNames ">{{name}}</li>
+    </ul>
   </div>
 </template>
 
@@ -32,6 +37,8 @@ export default {
     return {
       carName: "Ford from parent",
       carYear: 2018,
+      names: ['Vlas', 'Max', 'Elena','Igor'],
+      searchName: ''
     };
   },
   components: {
@@ -49,6 +56,13 @@ export default {
   filters: {
     lowerCase(value){
       return value.toLowerCase()
+    }
+  },
+  computed:{
+    filterNames(){
+      return this.names.filter(name=>{
+        return name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1
+      })
     }
   }
 };
