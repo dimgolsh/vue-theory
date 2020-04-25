@@ -25,6 +25,8 @@
     <ul>
       <li v-for="(name,index) of filterNames ">{{name}}</li>
     </ul>
+    <hr>
+    <app-list></app-list>
   </div>
 </template>
 

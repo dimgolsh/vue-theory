@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import List from './List.vue'
 import ColorDirect from './color';
 
 
@@ -16,6 +17,8 @@ Vue.filter('add', (value)=>{
   return value + ' Yess'
 })
 
+
+Vue.component('app-list',List)
 
 
 new Vue({
