@@ -2,7 +2,7 @@
   <div>
     <app-counter></app-counter>
     <hr>
-    <h1 v-colored>{{ carName }}</h1>
+    <h1 v-colored="'green'">{{ carName }}</h1>
     <hr>
 
     <app-car
